@@ -8,7 +8,7 @@ namespace ConsoleAppOppgave.Functions
 {
     public class RemoveItemPassing
     {
-        public static string RemoveItemPassings(string _result)
+        public static string RemoveItemPassings()
         {
             string strResult = "";
      

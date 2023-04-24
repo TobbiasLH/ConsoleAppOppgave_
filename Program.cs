@@ -1,5 +1,6 @@
 ﻿using ConsoleAppOppgave.Functions;
 using System;
+using System.Linq.Expressions;
 
 namespace ConsoleAppOppgave
 {
@@ -16,14 +17,16 @@ namespace ConsoleAppOppgave
             Console.WriteLine("Meny 6 - Fjern elementer fra en liste ved å komme forbi startindeksen og antall elementer som skal fjernes i LINQ Query");
             Console.WriteLine("Meny 7 - Ordne de distinkte elementene i listen i stigende rekkefølge i LINQ Query");
             Console.WriteLine("Meny 8 - Les en streng gjennom tastaturet og sorter den ved å bruke boblesortering");
-            Console.WriteLine("Meny 9");
-            Console.WriteLine("Meny 10");
+            Console.WriteLine("Meny 9 - Leser en tekst fil");
+            Console.WriteLine("Meny 10 - Skriver til en tekstfil asynkront");
             Console.WriteLine("Avslutt 11");
             Console.WriteLine("Hei, velg en av menyene fra 1 til 10");
 
             value = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Du har valgt: " + value);
+
+            Console.WriteLine("Trykk enter for å fortsette");
 
             Console.ReadKey();
 
@@ -100,7 +103,7 @@ namespace ConsoleAppOppgave
                 case 5:
                     try
                     {
-                        Console.WriteLine(RemoveItem.RemoveItems);
+                        RemoveItem.RemoveItems();
 
                         Console.ReadLine();
                     }
@@ -109,7 +112,9 @@ namespace ConsoleAppOppgave
                 case 6:
                     try
                     {
-                        Console.WriteLine(RemoveItemPassing.RemoveItemPassings);
+                        Console.WriteLine("Her er koden for meny 6:");
+
+                        RemoveItemPassing.RemoveItemPassings(); 
 
                         Console.ReadLine();
                     }
@@ -132,16 +137,40 @@ namespace ConsoleAppOppgave
                     catch (Exception ex) { Console.WriteLine(ex.Message);}
                     break;
                 case 8:
-                    Console.WriteLine("Her er koden for meny 8:");
+                    try
+                    {
+                        Console.WriteLine("Her er koden for meny 8:");
 
+                        // Console.WriteLine(ReadKeyboardBubbleSort.ReadKeyboardBubbleSorts);
+                        ReadKeyboardBubbleSort.ReadKeyboardBubbleSorts();
+
+                        Console.ReadLine();
+
+                    }
+                    catch (Exception ex) { Console.WriteLine(ex.Message);}
                     break;
                 case 9:
-                    Console.WriteLine("Her er koden for meny 9:");
+                    try
+                    {
+                        Console.WriteLine("Her er koden for meny 9:");
 
+                        // Console.WriteLine(ReadTextFile.ReadTextFiles);
+                        
+                        ReadTextFile.ReadTextFiles();
+                    }
+
+                    catch (Exception ex) { Console.WriteLine(ex.Message);}
                     break;
                 case 10:
-                    Console.WriteLine("Her er koden for meny 10:");
+                    try
+                    {
 
+                        Console.WriteLine("Her er koden for meny 10:");
+
+                        // Console.WriteLine(AsyncWriteTextFile.AsyncWriteTextFiles);
+                        AsyncWriteTextFile.AsyncWriteTextFiles();
+                    }
+                    catch (Exception ex) { Console.WriteLine(ex.Message); }
                     break;
                 case 11:
                     Environment.Exit(10);
